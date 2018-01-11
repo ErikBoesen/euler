@@ -1,0 +1,10 @@
+input.small {
+    width: 30px;
+}
+table {
+    border-collapse: collapse;
+}
+th, td {
+    border: solid 1px black;
+    padding: 3px;
+}

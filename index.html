@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <title>Euler's Method</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Euler's Method</h1>
+    start (<input id="xi" type="number" class="small" value=1>, <input id="yi" type="number" class="small" value=1>)
+    dy/dx <input id="dydx" type="text" value="x+y">
+    &Delta;x <input id="dx" type="number" value=0.2>
+    iter <input id="iterations" type="number" value=6>
+    <button id="run">Run</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>(x, y)</th>
+                <th>dy/dx</th>
+                <th>&Delta;x</th>
+                <th>&Delta;y = dy/dx*&Delta;</th>
+                <th>(x+&Delta;x, y+&Delta;y)</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+    <script src="scripts.js"></script>
+</body>
