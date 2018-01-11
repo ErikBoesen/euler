@@ -8,3 +8,17 @@ th, td {
     border: solid 1px black;
     padding: 3px;
 }
+
+.banner {
+    font-family: sans-serif;
+    position: absolute;
+    bottom: 50px;
+    right: -80px;
+    padding: 10px;
+    color: wh\ite;
+    background: #175f7e;
+    width: 300px;
+    text-align: center;
+    text-decoration: none;
+    transform: rotate(-45deg);
+}
