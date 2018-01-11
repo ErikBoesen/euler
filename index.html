@@ -5,20 +5,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
     <h1>Euler's Method</h1>
-    start (<input id="xi" type="number" class="small" value=1>, <input id="yi" type="number" class="small" value=1>)
-    dy/dx <input id="dydx" type="text" value="x+y">
-    &Delta;x <input id="dx" type="number" value=0.2>
-    Iterations <input id="iterations" type="number" value=6>
+    Start: (<input id="xi" type="number" class="small" value=1>, <input id="yi" type="number" class="small" value=1>)
+    $\frac{dy}{dx}$: <input id="dydx" type="text" value="x+y">
+    $&Delta;x$: <input id="dx" type="number" value=0.2>
+    Iterations: <input id="iterations" type="number" value=6>
     <button id="run">Run</button>
     <table>
         <thead>
             <tr>
-                <th>(x, y)</th>
-                <th>dy/dx</th>
-                <th>&Delta;x</th>
-                <th>&Delta;y = dy/dx*&Delta;</th>
-                <th>(x+&Delta;x, y+&Delta;y)</th>
+                <th>$(x, y)$</th>
+                <th>$\frac{dy}{dx}$</th>
+                <th>$&Delta;x$</th>
+                <th>$&Delta;y = \frac{dy}{dx}&Delta;x$</th>
+                <th>$(x+&Delta;x, y+&Delta;y)$</th>
             </tr>
         </thead>
         <tbody id="tbody">
@@ -26,5 +31,6 @@
     </table>
 
     <a href="https://github.com/ErikBoesen/euler" class="banner" target="_blank">View on GitHub</a>
+
     <script src="scripts.js"></script>
 </body>

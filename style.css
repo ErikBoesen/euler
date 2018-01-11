@@ -3,10 +3,12 @@ input.small {
 }
 table {
     border-collapse: collapse;
+    margin-top: 10px;
 }
 th, td {
-    border: solid 1px black;
+    border: solid 1px #aaa;
     padding: 3px;
+    height: 20px;
 }
 
 .banner {
