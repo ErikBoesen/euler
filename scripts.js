@@ -16,19 +16,22 @@ document.getElementById('run').onclick = function() {
         var tds = [];
         for (ii = 0; ii < 5; ii++) tds[ii] = document.createElement('td');
         console.log('Doing calculations');
-        tds[0].textContent = '(' + x + ',' + y + ')';
-        console.log(x);
-        console.log(y);
+        tds[0].textContent = '(' + pretty(x) + ',' + pretty(y) + ')';
         var deriv = eval(dydx.value.replace(/([a-z])/g, 'parseFloat($1)')); // Yes. Yes, I know.
-        tds[1].textContent = deriv.toFixed(2);
+        tds[1].textContent = pretty(deriv);
         tds[2].textContent = dx.value;
-        increase = deriv * dx.value;
+        increase = pretty(deriv * dx.value);
         tds[3].textContent = increase;
         x += parseFloat(dx.value);
         y += increase;
-        tds[4].textContent = '(' + x + ',' + y + ')';
-        console.log('Appending to DOM')
+        tds[4].textContent = '(' + pretty(x) + ',' + pretty(y) + ')';
+        console.log('Appending to DOM');
         for (ii = 0; ii < 5; ii++) tr.appendChild(tds[ii]);
         tbody.appendChild(tr);
     }
+}
+
+function pretty(n) {
+    var D = 1000000;
+    return n.toString().length <= 10 ? n : Math.round(n * D) / D;
 }
