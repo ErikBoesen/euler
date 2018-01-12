@@ -3,9 +3,10 @@ var tbody = document.getElementById('tbody'),
     yi = document.getElementById('yi'),
     dydx = document.getElementById('dydx'),
     dx = document.getElementById('dx'),
-    iterations = document.getElementById('iterations');
+    iterations = document.getElementById('iterations'),
+    run = document.getElementById('run');
 
-document.getElementById('run').onclick = function() {
+run.onclick = function() {
     var x = parseFloat(xi.value);
     var y = parseFloat(yi.value);
     while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
@@ -31,3 +32,5 @@ function pretty(n) {
     var D = 100000000000;
     return n.toString().length <= 10 ? n : Math.round(n * D) / D;
 }
+
+run.click();
