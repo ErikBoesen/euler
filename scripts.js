@@ -4,9 +4,13 @@ var tbody = document.getElementById('tbody'),
     dydx = document.getElementById('dydx'),
     dx = document.getElementById('dx'),
     iterations = document.getElementById('iterations'),
-    run = document.getElementById('run');
+    update = document.getElementById('update');
 
-run.onclick = function() {
+oninput = function() {
+    update.style.display = 'inline';
+};
+
+update.onclick = function() {
     var x = parseFloat(xi.value);
     var y = parseFloat(yi.value);
     while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
@@ -26,11 +30,12 @@ run.onclick = function() {
         for (ii = 0; ii < 5; ii++) tr.appendChild(tds[ii]);
         tbody.appendChild(tr);
     }
-}
+    this.style.display = 'none';
+};
 
 function pretty(n) {
     var D = 100000000000;
     return n.toString().length <= 10 ? n : Math.round(n * D) / D;
 }
 
-run.click();
+update.click();
