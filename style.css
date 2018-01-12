@@ -1,3 +1,6 @@
+body {
+    overflow-x: hidden;
+}
 input.small {
     width: 30px;
 }
