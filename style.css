@@ -28,15 +28,15 @@ th, td {
 }
 
 .banner {
-    font-family: sans-serif;
-    position: absolute;
-    top: 60px;
-    right: -80px;
+    position: fixed;
+    bottom: 40px;
+    right: -50px;
     padding: 10px;
-    color: wh\ite;
-    background: #175f7e;
-    width: 300px;
+    border: 2px solid black;
+    background: white;
+    color: black;
+    width: 200px;
     text-align: center;
     text-decoration: none;
-    transform: rotate(45deg);
+    transform: rotate(-45deg);
 }
