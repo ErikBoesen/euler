@@ -24,6 +24,7 @@ update.onclick = function() {
             .replace(/([a-z])([a-z])/g, '$1*$2')
             .replace(/([a-z])([a-z])/g, '$1*$2')
             .replace(/([a-z])(\d)/, '$1*$2')
+            .replace('^', '**')
             .replace(/([a-z])/g, 'parseFloat($1)')); // Yes. Yes, I know.
         tds[1].textContent = pretty(deriv);
         tds[2].textContent = dx.value;
