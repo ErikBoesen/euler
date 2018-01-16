@@ -13,19 +13,19 @@ oninput = function() {
 update.onclick = function() {
     var x = parseFloat(xi.value);
     var y = parseFloat(yi.value);
+    var eqn = dydx.value.replace(/(\d)([a-z])/g, '$1*$2')
+                        .replace(/([a-z])([a-z])/g, '$1*$2')
+                        .replace(/([a-z])([a-z])/g, '$1*$2')
+                        .replace(/([a-z])(\d)/, '$1*$2')
+                        .replace('^', '**')
+                        .replace(/([a-z])/g, 'parseFloat($1)');
     while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
     for (i = 0; i < iterations.value; i++) {
         var tr = document.createElement('tr');
         var tds = [];
         for (ii = 0; ii < 5; ii++) tds[ii] = document.createElement('td');
         tds[0].textContent = '(' + pretty(x) + ', ' + pretty(y) + ')';
-        var deriv = eval(dydx.value
-            .replace(/(\d)([a-z])/g, '$1*$2')
-            .replace(/([a-z])([a-z])/g, '$1*$2')
-            .replace(/([a-z])([a-z])/g, '$1*$2')
-            .replace(/([a-z])(\d)/, '$1*$2')
-            .replace('^', '**')
-            .replace(/([a-z])/g, 'parseFloat($1)')); // Yes. Yes, I know.
+        var deriv = eval(eqn); // Yes. Yes, I know.
         tds[1].textContent = pretty(deriv);
         tds[2].textContent = dx.value;
         increase = pretty(deriv * dx.value);
