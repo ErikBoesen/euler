@@ -20,8 +20,9 @@ update.onclick = function() {
         for (ii = 0; ii < 5; ii++) tds[ii] = document.createElement('td');
         tds[0].textContent = '(' + pretty(x) + ', ' + pretty(y) + ')';
         var deriv = eval(dydx.value
-            .replace(/([a-z])([a-z])/g, '$1*$2')
             .replace(/(\d)([a-z])/g, '$1*$2')
+            .replace(/([a-z])([a-z])/g, '$1*$2')
+            .replace(/([a-z])([a-z])/g, '$1*$2')
             .replace(/([a-z])(\d)/, '$1*$2')
             .replace(/([a-z])/g, 'parseFloat($1)')); // Yes. Yes, I know.
         tds[1].textContent = pretty(deriv);
