@@ -17,6 +17,9 @@ input:focus {
 input.small {
     width: 40px;
 }
+#error {
+    color: #ab1c1c;
+}
 table {
     border-collapse: collapse;
     margin-top: 10px;

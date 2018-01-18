@@ -6,7 +6,8 @@ var tbody = document.getElementById('tbody'),
         dx: document.getElementById('dx'),
         iterations: document.getElementById('iterations'),
     },
-    update = document.getElementById('update');
+    update = document.getElementById('update'),
+    error = document.getElementById('error');
 
 oninput = function() {
     update.style.display = 'inline';
@@ -25,6 +26,7 @@ update.onclick = function() {
             dx: inputs.dx.value,
             iterations: inputs.iterations.value,
         };
+    error.textContent = (seed.dx * seed.iterations > 20) ? 'Warning: Linearization\'s efficacy may decrease with many iterations or a large increment!' : '';
     while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
     for (i = 0; i < seed.iterations; i++) {
         var tr = document.createElement('tr');
