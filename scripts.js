@@ -20,8 +20,8 @@ update.onclick = function() {
             dydx: inputs.dydx.value.replace(/(\d)([a-z])/g, '$1*$2')
                                    .replace(/([a-z])([a-z])/g, '$1*$2')
                                    .replace(/([a-z])([a-z])/g, '$1*$2')
-                                   .replace(/([a-z])(\d)/, '$1*$2')
-                                   .replace('^', '**')
+                                   .replace(/([a-z])(\d)/g, '$1*$2')
+                                   .replace(/\^/g, '**')
                                    .replace(/([a-z])/g, 'parseFloat($1)'),
             dx: inputs.dx.value,
             iterations: inputs.iterations.value,
