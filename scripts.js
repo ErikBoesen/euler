@@ -14,6 +14,7 @@ oninput = function() {
 };
 
 update.onclick = function() {
+    if (/^[()xye\d+\-*/^]$/.test(inputs.dydx.value)) error.textContent = 'Invalid input data.';
     var x = parseFloat(inputs.xi.value),
         y = parseFloat(inputs.yi.value),
         seed = {
